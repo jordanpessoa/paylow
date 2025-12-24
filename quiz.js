@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Envio do quiz (garante que existe o formul·rio)
+  // Envio do quiz (garante que existe o formul√°rio)
   var quizForm = document.getElementById("quiz");
   if (quizForm) {
     quizForm.addEventListener("submit", function (e) {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// FunÁ„o de pagamento
+// Fun√ß√£o de pagamento
 function pagar(valor, descricao){
   var link = "";
 
@@ -27,54 +27,55 @@ function pagar(valor, descricao){
     link = "https://pag.ae/81kL5Z_2P";
   }
 
-  if (descricao === "AvanÁado"){
+  if (descricao === "Avan√ßado"){
     link = "https://pag.ae/81kLga4-o";
   }
 
   var pagDiv = document.getElementById("pagseguro");
   if (pagDiv) {
     pagDiv.innerHTML = `
-      <p><strong>VocÍ est· a um passo de desbloquear seu resultado:</strong></p>
+      <p><strong>Voc√™ est√° a um passo de desbloquear seu resultado:</strong></p>
       <a href="${link}" target="_blank" class="btn">
         Pagar R$${valor}
       </a>
       <p style="font-size:14px;opacity:.8;margin-top:10px;">
-        ApÛs o pagamento, vocÍ ser· redirecionado automaticamente.
+        Ap√≥s o pagamento, voc√™ ser√° redirecionado automaticamente.
       </p>
     `;
   }
 }
 
-// FunÁ„o para mostrar conte˙do antes do pagamento
+// Fun√ß√£o para mostrar conte√∫do antes do pagamento
 function mostrarConteudo(tipo){
   var texto = "";
   if(tipo === "completo"){
     texto = `
-      <h3>O que vocÍ vai descobrir na vers„o completa:</h3>
+      <h3>O que voc√™ vai descobrir na vers√£o completa:</h3>
       <ul>
-        <li>Seu nÌvel real de narcisismo e como ele aparece no dia a dia;</li>
-        <li>Como suas atitudes s„o interpretadas por outras pessoas;</li>
-        <li>Comportamentos autom·ticos que vocÍ talvez n„o perceba;</li>
-        <li>Dicas pr·ticas para melhorar relaÁıes e comunicaÁ„o.</li>
+        <li>Seu n√≠vel real de narcisismo e como ele aparece no dia a dia;</li>
+        <li>Como suas atitudes s√£o interpretadas por outras pessoas;</li>
+        <li>Comportamentos autom√°ticos que voc√™ talvez n√£o perceba;</li>
+        <li>Dicas pr√°ticas para melhorar rela√ß√µes e comunica√ß√£o.</li>
       </ul>
     `;
     pagar(7.99, "Completo");
   } else if(tipo === "avancado"){
     texto = `
-      <h3>O que vocÍ vai descobrir na vers„o avanÁada:</h3>
+      <h3>O que voc√™ vai descobrir na vers√£o avan√ßada:</h3>
       <ul>
-        <li>Tudo o que existe na vers„o completa;</li>
-        <li>Padrıes psicolÛgicos mais profundos do seu comportamento;</li>
-        <li>Impactos desses traÁos na carreira, relacionamentos e decisıes;</li>
-        <li>EstratÈgias avanÁadas para reconhecer e lidar com esses padrıes;</li>
+        <li>Tudo o que existe na vers√£o completa;</li>
+        <li>Padr√µes psicol√≥gicos mais profundos do seu comportamento;</li>
+        <li>Impactos desses tra√ßos na carreira, relacionamentos e decis√µes;</li>
+        <li>Estrat√©gias avan√ßadas para reconhecer e lidar com esses padr√µes;</li>
         <li>Uma leitura mais profunda e reveladora do seu perfil.</li>
       </ul>
     `;
-    pagar(9.99, "AvanÁado");
+    pagar(9.99, "Avan√ßado");
   }
 
   var conteudoDiv = document.getElementById("conteudo_desbloqueio");
   if (conteudoDiv) {
     conteudoDiv.innerHTML = texto;
   }
+
 }
