@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desbloqueie seu Resultado</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; }
+    .container { max-width: 700px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    .center { text-align: center; }
+    .btn { padding: 10px 20px; background: #2980b9; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    .btn:hover { background: #3498db; }
+    ul { text-align: left; }
+  </style>
+</head>
+<body>
+  <div class="container center">
+    <h2>Seu resultado está quase pronto</h2>
+    <p>
+      Você acabou de completar um teste único que revela padrões do seu comportamento que a maioria das pessoas <strong>nem percebe em si mesma</strong>.
+      Agora, você pode escolher até onde deseja ir para descobrir <strong>verdades surpreendentes sobre sua personalidade</strong>:
+    </p>
+
+    <div style="margin:20px 0;">
+      <button class="btn" id="btnCompleto">
+        Resultado Completo - R$7,99
+      </button>
+      <button class="btn" id="btnAvancado" style="margin-left:10px;">
+        Resultado Avançado - R$9,99
+      </button>
+    </div>
+
+    <div id="conteudo_desbloqueio" style="margin-top:25px;"></div>
+    <div id="pagseguro" style="margin-top:25px;"></div>
+  </div>
+
+  <script src="quiz.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var btnCompleto = document.getElementById("btnCompleto");
+      var btnAvancado = document.getElementById("btnAvancado");
+
+      if (btnCompleto) {
+        btnCompleto.addEventListener("click", function () {
+          if (typeof mostrarConteudo === "function") {
+            mostrarConteudo("completo");
+            document.getElementById("conteudo_desbloqueio").innerHTML += `
+              <p style="font-weight:bold; color:#d35400; margin-top:15px;">
+                ?? Versão Completa: descubra comportamentos que nem seus amigos percebem,
+                aprenda a melhorar sua comunicação e tenha insights exclusivos sobre você.
+              </p>
+            `;
+          } else {
+            alert("Erro: o script não carregou corretamente.");
+          }
+        });
+      }
+
+      if (btnAvancado) {
+        btnAvancado.addEventListener("click", function () {
+          if (typeof mostrarConteudo === "function") {
+            mostrarConteudo("avancado");
+            document.getElementById("conteudo_desbloqueio").innerHTML += `
+              <p style="font-weight:bold; color:#c0392b; margin-top:15px;">
+                ?? Versão Avançada: acesso completo a padrões psicológicos profundos, estratégias para lidar com traços ocultos
+                e análise detalhada do seu comportamento que poucas pessoas têm a chance de descobrir.
+              </p>
+            `;
+          } else {
+            alert("Erro: o script não carregou corretamente.");
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
