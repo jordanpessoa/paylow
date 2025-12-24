@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pré-Resultado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+<div class="container">
+  <h2>Seu pré-resultado:</h2>
+  <p id="resumo"></p>
+
+  <h3>O que você ainda pode aprender:</h3>
+  <ul>
+    <li>Como identificar quando seus traços de narcisismo influenciam suas relações;</li>
+    <li>Dicas práticas para lidar com críticas sem se sentir atacado;</li>
+    <li>Estratégias para equilibrar confiança e humildade;</li>
+    <li>Como melhorar a percepção que os outros têm de você;</li>
+    <li>Segredos sobre padrões comportamentais que podem surpreender você.</li>
+  </ul>
+
+  <p>Esses detalhes são apenas um **pré-resultado**. Para descobrir **como isso realmente impacta sua vida** e ter acesso a dicas personalizadas, desbloqueie a versão completa ou avançada:</p>
+  <a href="resultado.html" class="btn">Desbloquear Resultado</a>
+</div>
+
+<script>
+const total = parseInt(sessionStorage.getItem("pontuacao_quiz")) || 0;
+let texto = "";
+
+if(total <= 10) texto = "Você apresenta poucos traços de narcisismo. Ainda assim, pequenas atitudes podem impactar suas relações sem que perceba.";
+else if(total <= 20) texto = "Você apresenta traços moderados de narcisismo. Alguns comportamentos podem influenciar como os outros te percebem e como você se vê.";
+else texto = "Você apresenta muitos traços de narcisismo. Isso pode afetar significativamente suas relações e decisões, e você talvez nem perceba alguns padrões comportamentais.";
+
+document.getElementById("resumo").innerText = texto;
+</script>
+</body>
+</html>
