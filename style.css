@@ -6,5 +6,5 @@ p { line-height:1.5em; }
 .btn { display:inline-block; padding:12px 25px; margin:10px 0; background:#007bff; color:#fff; text-decoration:none; border-radius:5px; cursor:pointer; font-weight:bold; }
 .btn:hover { background:#0056b3; }
 .question { margin-bottom:20px; }
-
 label { display:block; margin:5px 0; cursor:pointer; }
+
